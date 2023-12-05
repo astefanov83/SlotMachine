@@ -1,9 +1,10 @@
 /* 
 Premise:
-
-
+3x3 matrix of RGB LEDs, where every row is the same color.
+Using capacitors, every position has a different combination of capacitance.
+The goal is to stop the circuit whenever three in a row, column, or diagonal are lit
 */
-
+#include "Arduino.h"
 
 void setup() {
 // put your setup code here, to run once:
