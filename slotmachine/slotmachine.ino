@@ -1,26 +1,33 @@
-
-int led = 11;         // the PWM pin the LED is attached to
-int brightness = 0;  // how bright the LED is
-int fadeAmount = 5;  // how many points to fade the LED by
+int DIGITAL_PIN_1 = 1;
+int DIGITAL_PIN_2 = 2;
+int DIGITAL_PIN_3 = 3;
+int DIGITAL_PIN_BUTTON = 4;
 
 // the setup routine runs once when you press reset:
 void setup() {
-  // declare pin 9 to be an output:
-  pinMode(led, OUTPUT);
+  pinMode(DIGITAL_PIN_1, INPUT);
+  pinMode(DIGITAL_PIN_2, INPUT);
+  pinMode(DIGITAL_PIN_3, INPUT);
+  pinMode(DIGITAL_PIN_BUTTON, INPUT);
 }
 
 // the loop routine runs over and over again forever:
 void loop() {
-  // set the brightness of pin 9:
-  analogWrite(led, brightness);
+  if (digitalRead(DIGITAL_PIN_BUTTON) = "LOW") {
 
-  // change the brightness for next time through the loop:
-  brightness = brightness + fadeAmount;
+    if (digitalRead(DIGITAL_PIN_1) = "HIGH") {
+      pinMode(DIGITAL_PIN_1, OUTPUT)
+      digitalWrite(DIGITAL_PIN_1, HIGH)
+    }
 
-  // reverse the direction of the fading at the ends of the fade:
-  if (brightness <= 0 || brightness >= 255) {
-    fadeAmount = -fadeAmount;
+    if (digitalRead(DIGITAL_PIN_2) = "HIGH") {
+      pinMode(DIGITAL_PIN_2, OUTPUT)
+      digitalWrite(DIGITAL_PIN_2, HIGH)
+    }
+
+    if (digitalRead(DIGITAL_PIN_3) = "HIGH") {
+      pinMode(DIGITAL_PIN_3, OUTPUT)
+      digitalWrite(DIGITAL_PIN_3, HIGH)
+    }
   }
-  // wait for 30 milliseconds to see the dimming effect
-  delay(30);
 }
